@@ -1,6 +1,6 @@
 ### Задание:
 По данным кликов по запросу \<query\> на \<URL\> 
-  вывести список \<URL host\> <most_frequent_query> <host_clicks>.
+  вывести список \<host of URLs\> <most_frequent_query> <host_clicks_count>.
 
 ### Реализация:
 Две map-reduce задачи. Первая считает <host_query>:<count>, вторая с помощью сложного ключа сортирует <host_queryCount>:<query> 
