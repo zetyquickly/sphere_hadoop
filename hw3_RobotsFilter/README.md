@@ -64,6 +64,9 @@ $ hadoop jar path/to/file.jar webpages_tablename websites_tablename
 ```
 (разумеется, таблицы будут существовать на момент запуска).  
 Проверка будет производиться сверкой содержимого вашей таблицы webpages с опорной. При правильном решении должно быть полное совпадение.  
+```
+$ hadoop jar RobotsComparator.jar webpages_res your_table out/hw3_diff
+```
 
 ## Ограничение на общее времея выполнения
 3 минуты (2 редьюсера).
