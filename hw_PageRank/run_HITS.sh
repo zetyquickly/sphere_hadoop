@@ -16,9 +16,7 @@ Log "REMOVING previous directory"
 hadoop fs -rm -r -f $OUTDIR
 
 Log "RUNNING JOB HITS initialisation"
-hadoop jar ./hw_PageRank.jar HitsInitJob \
-           -Dmapreduce.job.reduces=$NREDUCERS \
-           hw_PageRank/url_graph $WORKDIR/init
+hadoop jar ./hw_PageRank.jar HitsInitJob -Dmapreduce.job.reduces=$NREDUCERS hw_PageRank/url_graph $WORKDIR/init
 
 Log "RUNNING JOB HITS iterations"
 hadoop jar ./hw_PageRank.jar HitsIterJob \
