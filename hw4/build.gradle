@@ -1,0 +1,24 @@
+group = 'ru.mail.go'
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    maven {
+        name = 'cloudera'
+        url = 'https://repository.cloudera.com/artifactory/cloudera-repos'
+    }
+    mavenCentral()
+}
+
+
+dependencies {
+    compile 'org.apache.spark:spark-core_2.10:2.2.2'
+    compile 'org.apache.spark:spark-mllib_2.10:2.2.2'
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    compile 'junit:junit:4.12'
+}
