@@ -13,7 +13,7 @@ public class PageRank {
                 .setMaster(("local[2]"));
         JavaSparkContext sc = new JavaSparkContext(conf);
         System.out.println(1 + 3);
-        JavaRDD<String> lines = sc.textFile("file://home/emil/hadoop/sphere_hadoop/hw4/data/salam.txt");
+        JavaRDD<String> lines = sc.textFile("file:///home/emil/hadoop/sphere_hadoop/hw4/data/salam.txt");
         System.out.println(1 + 3);
         JavaRDD<String> words = lines.flatMap(
                 new FlatMapFunction<String, String>() {
