@@ -11,10 +11,10 @@ public class PageRank {
     public static void main(String[] args) throws Exception {
         SparkConf conf = new SparkConf()
                 .setAppName("Word Count")
-                .setMaster(("local[2]"));
+                .setMaster(("local[3]"));
         JavaSparkContext sc = new JavaSparkContext(conf);
         System.out.println(1 + 3);
-        JavaRDD<String> lines = sc.textFile("file:///home/emil/sphere_hadoop/whaaat/data/salam.txt");
+        JavaRDD<String> lines = sc.textFile("file:///home/emil/hadoop/sphere_hadoop/whaaat/data/salam.txt");
         // Split up into words.
         JavaRDD<String> words = lines.flatMap(
                 new FlatMapFunction<String, String>() {
@@ -36,7 +36,7 @@ public class PageRank {
                     }
                 });
         // Save the word count back out to a text file, causing evaluation.
-        counts.saveAsTextFile("file:///home/emil/sphere_hadoop/whaaat/data/out");
+        counts.saveAsTextFile("file:///home/emil/hadoop/sphere_hadoop/whaaat/data/out");
     }
 }
 
